@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "clash_display";
+  src: url("./assets/fonts/clashDisplay/OTF/ClashDisplay-Medium.otf ");
+}
+body {
+  @apply bg-mainBg relative;
+}

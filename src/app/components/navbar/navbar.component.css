@@ -1,0 +1,3 @@
+.navbar-text {
+  @apply bg-clip-text hover:font-medium hover:bg-gradient-to-r hover:text-transparent from-[#903AFF] to-[#FE34B9] active:bg-gradient-to-r;
+}

@@ -1,0 +1,13 @@
+.inps label {
+  @apply lg:text-xs text-base;
+}
+option {
+  @apply bg-transparent text-mainBg py-4;
+}
+.inps input,
+select {
+  @apply rounded-sm lg:py-1 py-3;
+}
+.inps input::placeholder {
+  @apply font-montserrat lg:text-[11px] text-sm text-[#ffffff40] align-middle pb-[1px];
+}

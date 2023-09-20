@@ -1,0 +1,14 @@
+.star {
+  @apply h-6 w-5;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #ffffffd7;
+}
+input,
+textarea {
+  @apply bg-transparent border px-5 rounded py-2 text-white w-full outline-none;
+}
+a:has(i) {
+  @apply hover:text-pinkk;
+}
