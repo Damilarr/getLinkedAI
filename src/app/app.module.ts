@@ -20,6 +20,7 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import { RewardsComponent } from './components/rewards/rewards.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { SponsorComponent } from './components/sponsor/sponsor.component';
+import { TypwriterComponent } from './components/typwriter/typwriter.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { SponsorComponent } from './components/sponsor/sponsor.component';
     RewardsComponent,
     PrivacyComponent,
     SponsorComponent,
+    TypwriterComponent,
   ],
   imports: [
     BrowserModule,

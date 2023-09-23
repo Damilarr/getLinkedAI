@@ -2,13 +2,14 @@
   <!-- hero-section -->
   <app-hero></app-hero>
   <!-- intro -->
-  <!-- <app-intro></app-intro> -->
+  <app-intro></app-intro>
   <!-- rules -->
-  <app-rules></app-rules>
+  <app-rules id="rules"></app-rules>
   <!-- judging criteria -->
-  <app-judge-criteria></app-judge-criteria>
+  <app-judge-criteria id="criterias"></app-judge-criteria>
   <!-- FAQs -->
   <div
+    id="faqs"
     class="flex flex-col md:flex-row justify-center items-center bg-[#110B20] border-b border-borderColor overflow-x-clip px-5 sm:px-8 md:px-16 py-32 space-y-6 md:space-y-0"
   >
     <div class="flex text-white flex-col w-full md:w-1/2 relative">
@@ -17,11 +18,14 @@
         class="absolute left-0 -top-7 star"
         alt=""
       />
-      <h2 class="font-clashDisplay font-bold text-xl sm:text-3xl space-y-3">
+      <h2
+        data-aos="fade-up"
+        class="font-clashDisplay font-bold text-xl sm:text-3xl space-y-3"
+      >
         Frequently asked <br />
         <span class="text-pinkk">Questions</span>
       </h2>
-      <p class="text-xs sm:text-sm">
+      <p data-aos="fade-up" class="text-xs sm:text-sm">
         We got answers to the questions that you might want to ask about
         getlinked Hackathon 1.0
       </p>
@@ -76,15 +80,16 @@
         src="../../../assets/Images/cwok_casual_21 1.svg"
         class="z-20"
         alt=""
+        data-aos="flip-up"
       />
     </div>
   </div>
   <!-- timeline -->
-  <!-- <app-timeline></app-timeline> -->
+  <app-timeline></app-timeline>
   <!-- Reward and  Prizes -->
-  <app-rewards></app-rewards>
+  <app-rewards id="rewards"></app-rewards>
   <!-- Partners and Sponsors -->
-  <app-rewards></app-rewards>
+  <app-sponsor id="sponsors"></app-sponsor>
   <!-- privacy and policy terms -->
-  <app-privacy></app-privacy>
+  <app-privacy id="privacy"></app-privacy>
 </section>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +8,14 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   openNavBar: boolean = false;
+  constructor(private router: Router) {}
   showNav() {
     this.openNavBar = true;
   }
   closeNav() {
     this.openNavBar = false;
+  }
+  Register() {
+    this.router.navigate(['/register']);
   }
 }

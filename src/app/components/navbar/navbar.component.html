@@ -1,5 +1,5 @@
 <nav
-  class="flex flex-row w-full text-white px-10 bg-mainBg py-7 border-b border-borderColor items-center justify-between overflow-x-hidden"
+  class="flex sticky -top-1 z-50 flex-row w-full text-white px-10 bg-mainBg py-7 border-b border-borderColor items-center justify-between overflow-x-hidden"
 >
   <a
     href="#"
@@ -12,9 +12,9 @@
   >
     <a href="#" class="navbar-text">Timeline</a>
     <a href="#" class="navbar-text">Overview</a>
-    <a href="#" class="navbar-text">FAQs</a>
-    <a href="#" class="navbar-text">Contact</a>
-    <app-button title="Register"></app-button>
+    <a href="#faqs" class="navbar-text">FAQs</a>
+    <a href="/contact" class="navbar-text">Contact</a>
+    <app-button (click)="Register()" title="Register"></app-button>
   </div>
   <div (click)="showNav()" class="relative">
     <img
@@ -24,30 +24,34 @@
     />
   </div>
   <!-- mobile nav -->
-  <div
-    class="w-full left-0 top-0 rounded-md transition-all h-[65vh] justify-between absolute px-9 py-32 bg-mainBg shadow-md z-50"
-    [ngClass]="[openNavBar ? 'block' : 'hidden']"
-  >
-    <div
-      class="relative flex font-montserrat text-lg font-medium h-full justify-around text-white flex-col space-y-3"
-    >
-      <!-- navigation back -->
-      <div
-        class="bg-gradient-to-r h-10 w-10 sm:hidden flex justify-center items-center rounded-full bg-transparent to-[#903AFF] -top-20 right-8 transition-all absolute duration-1000 via-[#D434FE] from-[#FE34B9] p-3"
-      >
-        <button
-          (click)="closeNav()"
-          class="bg-mainBg text-white text-center text-xl font-bold px-[12.5px] py-[5px] mx-auto rounded-full"
-        >
-          <i class="fa-solid fa-xmark py-[1px]"></i>
-        </button>
-      </div>
-      <!-- End of navigation back -->
-      <p>Timeline</p>
-      <p>Overview</p>
-      <p>FAQs</p>
-      <p>Contact</p>
-      <app-button title="Register" class="w-fit pt-2"></app-button>
-    </div>
-  </div>
 </nav>
+<div
+  class="w-full left-0 top-0 rounded-md transition-all h-[65vh] justify-between absolute px-9 py-32 bg-mainBg z-[999] shadow-md"
+  [ngClass]="[openNavBar ? 'block' : 'hidden']"
+>
+  <div
+    class="relative flex font-montserrat text-lg font-medium h-full justify-around text-white flex-col space-y-3"
+  >
+    <!-- navigation back -->
+    <div
+      class="bg-gradient-to-r h-10 w-10 sm:hidden flex justify-center items-center rounded-full bg-transparent to-[#903AFF] -top-20 right-8 transition-all absolute duration-1000 via-[#D434FE] from-[#FE34B9] p-3"
+    >
+      <button
+        (click)="closeNav()"
+        class="bg-mainBg text-white text-center text-xl font-bold px-[12.5px] py-[5px] mx-auto rounded-full"
+      >
+        <i class="fa-solid fa-xmark py-[1px]"></i>
+      </button>
+    </div>
+    <!-- End of navigation back -->
+    <a href="#">Timeline</a>
+    <a href="#">Overview</a>
+    <a href="#faqs">FAQs</a>
+    <a href="/contact">Contact</a>
+    <app-button
+      title="Register"
+      (click)="Register()"
+      class="w-fit pt-2"
+    ></app-button>
+  </div>
+</div>
