@@ -22,13 +22,13 @@
         </h2>
         <img
           src="../../../assets/Images/fire.svg"
-          class="absolute -right-2 sm:-right-9 lg:right-20 top-10 lg:top-24"
+          class="absolute -right-2 sm:-right-9 lg:right-8 top-10 lg:top-24"
           alt=""
           loading="lazy"
         />
         <img
           src="../../../assets/Images/chain-9365116-7621444.svg"
-          class="absolute sm:right-[64px] lg:right-36 top-8 lg:top-20 w-14 sm:w-20 lg:w-auto animate-bounce"
+          class="absolute sm:right-[64px] lg:right-20 top-8 lg:top-20 w-14 sm:w-20 lg:w-auto animate-bounce"
           alt=""
           loading="lazy"
         />
@@ -45,7 +45,11 @@
         Participate in getlinked tech Hackathon 2023 stand a chance to win a Big
         prize
       </p>
-      <app-button title="Register" class="w-fit mx-auto lg:mx-0"></app-button>
+      <app-button
+        title="Register"
+        class="w-fit mx-auto lg:mx-0"
+        (click)="Register()"
+      ></app-button>
     </div>
     <div
       class="font-unica justify-center lg:justify-normal space-x-5 text-6xl flex flex-row"

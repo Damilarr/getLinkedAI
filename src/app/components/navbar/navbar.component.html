@@ -26,7 +26,7 @@
   <!-- mobile nav -->
 </nav>
 <div
-  class="w-full left-0 top-0 rounded-md transition-all h-[65vh] justify-between absolute px-9 py-32 bg-mainBg z-[999] shadow-md"
+  class="w-full left-0 top-0 rounded-md transition-all h-[65vh] justify-between fixed px-9 py-32 bg-mainBg z-[999] shadow-md"
   [ngClass]="[openNavBar ? 'block' : 'hidden']"
 >
   <div
@@ -44,8 +44,8 @@
       </button>
     </div>
     <!-- End of navigation back -->
-    <a href="#">Timeline</a>
-    <a href="#">Overview</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#overview">Overview</a>
     <a href="#faqs">FAQs</a>
     <a href="/contact">Contact</a>
     <app-button

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import * as Aos from 'aos';
 
 @Component({
@@ -7,6 +8,7 @@ import * as Aos from 'aos';
   styleUrls: ['./hero.component.css'],
 })
 export class HeroComponent {
+  constructor(private router: Router) {}
   showTypewriter = true;
   hour: number = 0;
   minute: number = 0;
@@ -33,5 +35,8 @@ export class HeroComponent {
     setTimeout(() => {
       Aos.refresh();
     }, 500);
+  }
+  Register() {
+    this.router.navigate(['/register']);
   }
 }
