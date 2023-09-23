@@ -1,5 +1,5 @@
 <section
-  class="mt-24 sm:mt-32 flex w-full flex-col lg:flex-row py-7 sm:py-10 md:py-16 px-7 sm:px-12 md:px-14 lg:px-0 lg:pl-16 items-start border-b border-borderColor overflow-x-clip"
+  class="flex w-full flex-col lg:flex-row py-7 sm:py-10 md:py-16 px-7 sm:px-12 md:px-14 lg:px-0 lg:pl-16 items-start border-b border-borderColor overflow-x-clip"
 >
   <div
     class="flex text-white flex-col space-y-5 w-full lg:w-1/2 sm:pt-4 relative"
@@ -22,19 +22,19 @@
         </h2>
         <img
           src="../../../assets/Images/fire.svg"
-          class="absolute -right-2 sm:-right-9 lg:-right-20 top-10 lg:top-24"
+          class="absolute -right-2 sm:-right-9 lg:right-20 top-10 lg:top-24"
           alt=""
           loading="lazy"
         />
         <img
           src="../../../assets/Images/chain-9365116-7621444.svg"
-          class="absolute sm:right-[64px] lg:-right-5 top-8 lg:top-20 w-14 sm:w-20 lg:w-auto animate-bounce"
+          class="absolute sm:right-[64px] lg:right-36 top-8 lg:top-20 w-14 sm:w-20 lg:w-auto animate-bounce"
           alt=""
           loading="lazy"
         />
         <img
           src="../../../assets/Images/Creative 1.svg"
-          class="absolute w-6 -top-1 sm:w-auto right-20 sm:right-16 sm:-top-14 animate-pulse"
+          class="absolute w-6 -top-1 sm:w-auto right-20 sm:right-16 lg:right-56 sm:-top-14 animate-pulse"
           alt=""
           loading="lazy"
         />
@@ -50,9 +50,9 @@
     <div
       class="font-unica justify-center lg:justify-normal space-x-5 text-6xl flex flex-row"
     >
-      <span>00<span class="text-sm">H</span></span>
-      <span>00<span class="text-sm">M</span></span>
-      <span>00<span class="text-sm">S</span></span>
+      <span>{{ hour }}<span class="text-sm">H</span></span>
+      <span>{{ minute }}<span class="text-sm">M</span></span>
+      <span>{{ sec }}<span class="text-sm">S</span></span>
     </div>
     <h2
       class="font-bold sm:block hidden hr font-montserrat italic text-right -top-14 lg:-top-[75px] sm:right-[25%] md:right-40 w-full lg:-right-[90%] lg:text-3xl md:text-2xl sm:text-xl text-base absolute text-white after:-mt-10 after:md:mt-0"
