@@ -1,0 +1,14 @@
+.hr::after {
+  content: url(../../../assets/Images/pinkLine.svg);
+  width: 50%;
+  display: block;
+  position: absolute;
+  right: 0;
+  /* margin-top: -14px; */
+}
+@media screen and (max-width: 640px) {
+  .hr::after {
+    width: 40%;
+    right: 30%;
+  }
+}

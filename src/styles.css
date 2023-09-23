@@ -6,6 +6,16 @@
   font-family: "clash_display";
   src: url("./assets/fonts/clashDisplay/OTF/ClashDisplay-Medium.otf ");
 }
+@font-face {
+  font-family: "tommy";
+  src: url("./assets/fonts/madeTommy/mediumOutline.otf ");
+}
 body {
-  @apply bg-mainBg relative;
+  @apply bg-mainBg relative w-full  m-0 p-0 overflow-y-scroll overflow-x-hidden;
+}
+.star {
+  @apply w-4 animate-pulse;
+}
+.smStar {
+  @apply w-[15px] h-[18px] animate-pulse;
 }

@@ -1,110 +1,279 @@
 <section
-  class="flex flex-col w-full items-around lg:flex-row lg:justify-around items-center px-16 py-12 min-h-screen relative"
+  class="flex flex-col w-full items-around lg:flex-row lg:justify-around items-center px-5 sm:px-16 py-12 h-screen relative overflow-x-hidden"
 >
+  <div class="w-full sm:hidden block">
+    <h2 class="font-clashDisplay block text-left sm:hidden text-xl text-pinkk">
+      Register
+    </h2>
+  </div>
   <img
     src="../../../assets/Images/3d-graphic-designer-showing-thumbs-up-png 1.svg"
     alt="3d-graphic-designer-showing-thumbs-up-png 1.svg"
-    class="w-3/4 lg:w-2/4"
+    class="w-3/4 lg:w-2/4 z-20"
+    loading="lazy"
+  />
+  <img
+    src="../../../assets/Images/ashStar.png"
+    class="star absolute bottom-12 left-52 animate-pulse"
+    alt=""
+  />
+  <img
+    src="../../../assets/Images/pinkStar.png"
+    class="absolute md:top-20 top-40 z-[12] star md:left-52 right-11"
+    alt=""
+  />
+  <img
+    src="../../../assets/Images/purpleStar.png"
+    class="star bottom-32 left-3/5 absolute"
+    alt=""
+  />
+  <img
+    src="../../../assets/Images/Purple-Lens-Flare-PNG (1).png"
+    class="absolute left-36 blur-[100px] brightness-75 filter z-10"
+    alt=""
+  />
+  <img
+    src="../../../assets/Images/Purple-Lens-Flare-PNG (1).png"
+    class="absolute left-0 top-0 blur-[90px] brightness-75 filter z-10"
+    alt=""
+  />
+  <img
+    src="../../../assets/Images/Purple-Lens-Flare-PNG (1).png"
+    class="absolute hidden sm:block -top-5 left-64 blur-[90px] brightness-75 filter z-10"
+    alt=""
   />
   <div
-    class="flex w-full lg:w-auto flex-col px-8 py-8 bg-clip-padding bg-opacity-5 backdrop-blur-xl backdrop-filter bg-white rounded-md"
+    class="flex w-full lg:w-auto flex-col sm:px-8 px-3 py-8 bg-clip-padding sm:bg-opacity-5 backdrop-blur-xl md:shadow-md shadow-black backdrop-filter bg-transparent sm:bg-white rounded-lg z-20 relative"
   >
+    <img
+      src="../../../assets/Images/purLensFlareDown.svg"
+      class="absolute -z-10 -right-32 -bottom-24 opacity-30 blur-lg"
+      alt=""
+    />
+    <img
+      src="../../../assets/Images/Purple-Lens-Flare-PNG (2).png"
+      class="absolute -z-10 blur-[120px] bg-blend-hard-light opacity-40 filter brightness-50"
+      alt=""
+    />
+    <img
+      src="../../../assets/Images/Purple-Lens-Flare-PNG (2).png"
+      class="absolute -z-10 blur-[150px] bg-blend-soft-light right-0 opacity-40 brightness-[.55] filter"
+      alt=""
+    />
     <div class="flex flex-col justify-center space-y-3">
-      <h2 class="font-clashDisplay text-lg text-pinkk">Register</h2>
-      <div class="flex items-baseline text-white">
+      <h2 class="font-clashDisplay hidden sm:block text-xl text-pinkk">
+        Register
+      </h2>
+      <div class="flex items-baseline text-base font-montserrat text-white">
         <span class="mt-2">Be part of this movement!</span>
         <span class="border-b-2 border-b-pinkk border-dotted">🚶‍♂️🚶🏽‍♀️</span>
       </div>
-      <h1 class="font-montserrat w-3/4 text-white">CREATE YOUR ACCOUNT</h1>
-      <div class="inps flex flex-col space-y-5 text-white font-montserrat">
-        <div class="flex w-full justify-around space-x-4 items-center">
-          <div class="w-1/2 flex flex-col space-y-2">
+      <h1 class="font-montserrat w-full text-xl text-white">
+        CREATE YOUR ACCOUNT
+      </h1>
+      <form
+        [formGroup]="registerForm"
+        (ngSubmit)="onSubmit(registerForm)"
+        class="inps flex flex-col space-y-5 text-white font-montserrat"
+      >
+        <div
+          class="flex flex-col lg:flex-row w-full justify-around space-y-3 lg:space-y-0 lg:space-x-4 items-center"
+        >
+          <div class="lg:w-1/2 w-full flex flex-col space-y-2">
             <label for="Team's Name" class="">Team's Name</label>
             <input
               type="text"
-              name="teamName"
+              formControlName="team_name"
               class="outline-none pl-4 bg-transparent border"
               placeholder="Enter the name of your group"
             />
+            <small
+              *ngIf="
+                registerForm?.get('team_name')?.invalid &&
+                (registerForm?.get('team_name')?.dirty ||
+                  registerForm?.get('team_name')?.touched)
+              "
+              class="text-pinkk"
+              >Please Enter your team name</small
+            >
           </div>
-          <div class="w-1/2 flex flex-col space-y-2">
+          <div class="lg:w-1/2 w-full flex flex-col space-y-2">
             <label for="phone" class="">Phone</label>
             <input
               type="text"
-              name="phone"
+              formControlName="phone_number"
               class="outline-none pl-4 bg-transparent border"
               placeholder="Enter the your Phone Number"
             />
+            <small
+              *ngIf="
+                registerForm?.get('phone_number')?.invalid &&
+                (registerForm?.get('phone_number')?.dirty ||
+                  registerForm?.get('phone_number')?.touched)
+              "
+              class="text-pinkk"
+              >Please Enter your phone number</small
+            >
           </div>
         </div>
-        <div class="flex w-full justify-around space-x-4 items-center">
-          <div class="w-1/2 flex flex-col space-y-2">
+        <div
+          class="flex lg:flex-row flex-col w-full justify-around space-y-3 lg:space-y-0 lg:space-x-4 items-center"
+        >
+          <div class="lg:w-1/2 w-full flex flex-col space-y-2">
             <label for="email" class="">Email</label>
             <input
               type="text"
-              name="email"
+              formControlName="email"
               class="outline-none pl-4 bg-transparent border"
               placeholder="Enter your Email address"
             />
+            <small
+              *ngIf="
+                registerForm?.get('email')?.invalid &&
+                (registerForm?.get('email')?.dirty ||
+                  registerForm?.get('email')?.touched)
+              "
+              class="text-pinkk"
+              >Please Enter your email</small
+            >
           </div>
-          <div class="w-1/2 flex flex-col space-y-2">
+          <div class="lg:w-1/2 w-full flex flex-col space-y-2">
             <label for="projectTopic" class="">Project Topic</label>
             <input
               type="text"
-              name="projectTopic"
+              formControlName="project_topic"
               class="outline-none pl-4 bg-transparent border"
               placeholder="What is your group Project Topic"
             />
+            <small
+              *ngIf="
+                registerForm?.get('project_topic')?.invalid &&
+                (registerForm?.get('project_topic')?.dirty ||
+                  registerForm?.get('project_topic')?.touched)
+              "
+              class="text-pinkk"
+              >Please Enter your project topic</small
+            >
           </div>
         </div>
         <div class="flex justify-around space-x-4 items-center">
-          <div class="flex w-1/2 flex-col space-y-2">
+          <div class="flex lg:w-1/2 w-2/3 flex-col space-y-2">
             <label for="category" class="">Category</label>
             <select
-              name="Select"
+              formControlName="category"
               id=""
               class="border bg-transparent px-2 text-sm outline-none"
             >
-              <option value="">Select Your Category</option>
-              <option value=""></option>
-              <option value=""></option>
+              <option value="" selected class="text-white">
+                Select Your Category
+              </option>
+              <option value="{{ item.id }}" *ngFor="let item of category">
+                {{ item.name }}
+              </option>
             </select>
+            <small
+              *ngIf="
+                registerForm?.get('category')?.invalid &&
+                (registerForm?.get('category')?.dirty ||
+                  registerForm?.get('team_name')?.touched)
+              "
+              class="text-pinkk"
+              >Please pick your category</small
+            >
           </div>
-          <div class="flex w-1/2 flex-col space-y-2">
+          <div class="flex lg:w-1/2 w-1/3 flex-col space-y-2">
             <label for="category" class="">Group size</label>
             <select
               name="Size"
               id=""
               class="border bg-transparent px-2 text-sm outline-none"
             >
-              <option value="0">Select</option>
+              <option value="" selected>Select</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
             </select>
           </div>
         </div>
-      </div>
-      <p class="text-[#FF26B9] text-sm italic">
-        please review your registration details before submitting
-      </p>
-      <div class="flex text-white space-x-2">
-        <input type="checkbox" />
-        <p class="text-xs">
-          I agreed with the event terms and conditions and privacy policy
+        <p class="text-[#FF26B9] text-sm italic">
+          please review your registration details before submitting
         </p>
-      </div>
-      <div
-        class="hover:bg-gradient-to-r bg-transparent w-full rounded to-[#903AFF] transition-all duration-1000 via-[#D434FE] from-[#FE34B9] p-[2px]"
-      >
-        <button
-          class="rounded-sm py-2 px-7 text-white transition-all w-full duration-100 hover:from-mainBg hover:to-mainBg to-[#903AFF] via-[#D434FE] from-[#FE34B9] bg-gradient-to-br"
+        <div class="flex text-white space-x-2">
+          <input type="checkbox" formControlName="privacy_poclicy_accepted" />
+          <p class="text-xs">
+            I agreed with the event terms and conditions and privacy policy
+          </p>
+        </div>
+        <small
+          *ngIf="
+            registerForm?.get('privacy_poclicy_accepted')?.invalid &&
+            (registerForm?.get('privacy_poclicy_accepted')?.dirty ||
+              registerForm?.get('privacy_poclicy_accepted')?.touched)
+          "
+          class="text-pinkk"
+          >Accept the privacy policy to proceed</small
         >
-          Register Now
-        </button>
-      </div>
+        <div
+          class="hover:bg-gradient-to-r bg-transparent w-auto mx-auto md:w-full rounded to-[#903AFF] transition-all duration-1000 via-[#D434FE] from-[#FE34B9] p-[2px]"
+        >
+          <button
+            [disabled]="registerForm.invalid"
+            class="rounded-sm py-2 px-7 text-white transition-all w-auto md:w-full duration-100 hover:from-mainBg hover:to-mainBg to-[#903AFF] via-[#D434FE] from-[#FE34B9] bg-gradient-to-br"
+          >
+            {{ btnText }}
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </section>
+<!-- popup confirmation -->
+<div
+  class="bg-mainBg bg-opacity-90"
+  [ngClass]="[
+    !modalIsOpen
+      ? 'hidden'
+      : 'flex fixed z-40 top-0 bottom-0 left-0 right-0 justify-center items-center h-full'
+  ]"
+>
+  <div
+    class="border w-5/6 md:w-3/6 lg:w-2/6 space-y-2 text-white font-montserrat text-center border-pinkk pt-7 p-4 flex flex-col"
+  >
+    <img
+      src="../../../assets/Images/congratulation.png"
+      class="mx-auto animate-bounce duration-1000 transition-all"
+      alt=""
+    />
+    <h2 class="text-3xl font-semibold">
+      Congratulations you have successfully registered
+    </h2>
+    <div class="flex items-end justify-center">
+      <p class="font-semibold text-sm">
+        Yes, it was easy and you did it! check your mail box for next step
+      </p>
+      <img
+        src="../../../assets/Images/1531010992wink-emoji-woman-png 1.png"
+        class="w-5 h-5"
+        alt=""
+        loading="lazy"
+      />
+    </div>
+    <div
+      class="hover:bg-gradient-to-r bg-transparent w-full rounded to-[#903AFF] transition-all duration-1000 via-[#D434FE] from-[#FE34B9] p-[2px]"
+    >
+      <button
+        class="rounded-sm py-2 px-7 text-white transition-all w-full duration-100 hover:from-mainBg hover:to-mainBg to-[#903AFF] via-[#D434FE] from-[#FE34B9] bg-gradient-to-br"
+        (click)="closeModal()"
+      >
+        Back
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,24 @@
 <section
-  class="min-h-screen flex justify-center lg:justify-around items-center pt-20 pb-5 px-4 sm:px-3 bg-mainBg relative bottom-0 overflow-x-hidden"
+  class="w-full min-h-screen flex justify-center lg:justify-around items-center pt-20 pb-5 px-4 sm:px-3 bg-mainBg relative bottom-0 overflow-x-hidden"
 >
   <div class="hidden lg:flex flex-col space-y-3 py-2 relative overflow-visible">
     <img
       src="../../../assets/Images/pinkStar.png"
       class="star absolute -top-14"
       alt=""
+      loading="lazy"
     />
     <img
       src="../../../assets/Images/pupflareUp.svg"
-      class="absolute -left-12 -top-24 opacity-30 mix-blend-lighten filter drop-shadow-2xl-z-11"
+      class="absolute -left-12 -top-24 bg-blend-soft-light blur-[80px] filter -z-11"
       alt=""
+      loading="lazy"
+    />
+    <img
+      src="../../../assets/Images/pupflareUp.svg"
+      class="absolute opacity-75 -left-28 top-0 bg-blend-soft-light blur-[80px] filter -z-11"
+      alt=""
+      loading="lazy"
     />
     <h1 class="text-pinkk font-clashDisplay font-semibold text-base">
       Get in touch
@@ -42,7 +50,7 @@
     </div>
   </div>
   <div
-    class="w-full md:w-4/5 lg:w-[45%] xl:w-2/6 h-auto py-10 lg:py-6 px-4 sm:px-7 md:px-12 bg-clip-padding md:backdrop-blur-xl backdrop-filter md:bg-opacity-5 shadow-mainBg md:bg-white rounded-md relative"
+    class="w-full md:w-4/5 lg:w-[45%] xl:w-2/6 h-auto py-10 lg:py-6 px-4 sm:px-7 md:px-12 bg-clip-padding md:backdrop-blur-xl backdrop-filter md:bg-opacity-5 shadow-black md:bg-white rounded-md relative z-20 md:shadow-sm"
   >
     <img
       src="../../../assets/Images/ashStar.png"
@@ -66,13 +74,15 @@
     />
     <img
       src="../../../assets/Images/purLensFlareDown.svg"
-      class="hidden lg:block absolute -right-44 -bottom-4 -z-10 filter opacity-30 drop-shadow-2xl"
+      class="hidden lg:block absolute bg-blend-soft-light blur-[70px] brightness-105 opacity-40 -right-44 -z-10 filter"
       alt=""
+      loading="lazy"
     />
     <img
       src="../../../assets/Images/mobileFlare.svg"
-      class="lg:hidden block -top-20 -left-24 drop-shadow-2xl shadow-mainBg md:-z-10 absolute"
+      class="lg:hidden blur-[90px] bg-blend-hard-light opacity-75 filter block -top-20 -left-10 drop-shadow-2xl shadow-mainBg absolute"
       alt=""
+      loading="lazy"
     />
     <img
       src="../../../assets/Images/star outlin.png"
@@ -88,19 +98,65 @@
     <p class="text-white font-montserrat font-normal pt-3">
       Email us below to any question related to our event
     </p>
-    <form action="#" class="flex flex-col py-3 space-y-7">
-      <input type="text" class="hidden lg:block" placeholder="First Name" />
-      <input type="text" class="lg:hidden" placeholder="Team's Name" />
+    <form
+      [formGroup]="contactForm"
+      action="#"
+      class="flex flex-col py-3 space-y-7 z-20 relative"
+    >
+      <input
+        type="text"
+        formControlName="first_name"
+        class="hidden lg:block"
+        placeholder="First Name"
+      />
+      <input
+        type="text"
+        formControlName="first_name"
+        class="lg:hidden"
+        placeholder="Team's Name"
+      />
+      <small
+        *ngIf="
+          contactForm?.get('first_name')?.invalid &&
+          (contactForm?.get('first_name')?.dirty ||
+            contactForm?.get('first_name')?.touched)
+        "
+        class="text-pinkk"
+        >Please provide a name.</small
+      >
       <input type="text" class="lg:hidden" placeholder="Topic" />
-      <input type="email" placeholder="Email" />
+      <input type="email" placeholder="Email" formControlName="email" />
+      <small
+        *ngIf="
+          contactForm?.get('first_name')?.invalid &&
+          (contactForm?.get('first_name')?.dirty ||
+            contactForm?.get('first_name')?.touched)
+        "
+        class="text-pinkk"
+        >Please provide a valid email.</small
+      >
       <textarea
         name="message"
         placeholder="Message"
         id=""
         cols="10"
         rows="4"
+        formControlName="message"
       ></textarea>
-      <app-button title="Submit" class="text-white mx-auto"></app-button>
+      <small
+        *ngIf="
+          contactForm?.get('first_name')?.invalid &&
+          (contactForm?.get('first_name')?.dirty ||
+            contactForm?.get('first_name')?.touched)
+        "
+        class="text-pinkk"
+        >Please Enter your message</small
+      >
+      <app-button
+        title="Submit"
+        class="text-white mx-auto"
+        (click)="onSubmit(contactForm)"
+      ></app-button>
       <div class="lg:hidden block mx-auto">
         <p class="text-pinkk font-montserrat text-center font-medium text-sm">
           Share on
@@ -116,13 +172,14 @@
       </div>
     </form>
   </div>
+  <!-- navigation back button -->
   <div
     class="bg-gradient-to-r h-10 w-10 lg:hidden flex justify-center items-center rounded-full bg-transparent to-[#903AFF] transition-all absolute top-5 left-7 duration-1000 via-[#D434FE] from-[#FE34B9] p-3"
   >
     <a
       href="#"
-      class="bg-mainBg text-white text-center text-2xl font-bold px-[11px] py-[2.5px] rounded-full"
-      ><i class="fa fa-less-than p-[1px]"></i
+      class="bg-mainBg text-white text-center text-xl font-bold px-[12.5px] py-[5px] mx-auto rounded-full"
+      ><i class="fa fa-angle-left px-[1px]"></i
     ></a>
   </div>
 </section>

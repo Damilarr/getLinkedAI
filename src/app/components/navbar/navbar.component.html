@@ -1,12 +1,53 @@
-<nav class="flex text-white bg-mainBg py-3 items-center justify-around">
-  <p class="font-clashDisplay font-semibold text-xl w-1/6">
+<nav
+  class="flex flex-row w-full text-white px-10 bg-mainBg py-7 border-b border-borderColor items-center justify-between overflow-x-hidden"
+>
+  <a
+    href="#"
+    class="font-clashDisplay font-bold px-3 text-base sm:text-2xl lg:text-4xl w-2/6"
+  >
     get<span class="text-pinkk">linked</span>
-  </p>
-  <div class="flex font-montserrat text-sm w-2/5 justify-between items-center">
+  </a>
+  <div
+    class="sm:flex relative hidden font-montserrat text-base w-auto space-x-5 md:space-x-8 justify-between items-center"
+  >
     <a href="#" class="navbar-text">Timeline</a>
     <a href="#" class="navbar-text">Overview</a>
     <a href="#" class="navbar-text">FAQs</a>
     <a href="#" class="navbar-text">Contact</a>
     <app-button title="Register"></app-button>
+  </div>
+  <div (click)="showNav()" class="relative">
+    <img
+      src="../../../assets/Images/Vector.svg"
+      class="block sm:hidden"
+      alt=""
+    />
+  </div>
+  <!-- mobile nav -->
+  <div
+    class="w-full left-0 top-0 rounded-md transition-all h-[65vh] justify-between absolute px-9 py-32 bg-mainBg shadow-md z-50"
+    [ngClass]="[openNavBar ? 'block' : 'hidden']"
+  >
+    <div
+      class="relative flex font-montserrat text-lg font-medium h-full justify-around text-white flex-col space-y-3"
+    >
+      <!-- navigation back -->
+      <div
+        class="bg-gradient-to-r h-10 w-10 sm:hidden flex justify-center items-center rounded-full bg-transparent to-[#903AFF] -top-20 right-8 transition-all absolute duration-1000 via-[#D434FE] from-[#FE34B9] p-3"
+      >
+        <button
+          (click)="closeNav()"
+          class="bg-mainBg text-white text-center text-xl font-bold px-[12.5px] py-[5px] mx-auto rounded-full"
+        >
+          <i class="fa-solid fa-xmark py-[1px]"></i>
+        </button>
+      </div>
+      <!-- End of navigation back -->
+      <p>Timeline</p>
+      <p>Overview</p>
+      <p>FAQs</p>
+      <p>Contact</p>
+      <app-button title="Register" class="w-fit pt-2"></app-button>
+    </div>
   </div>
 </nav>
