@@ -128,9 +128,9 @@
       <input type="email" placeholder="Email" formControlName="email" />
       <small
         *ngIf="
-          contactForm?.get('first_name')?.invalid &&
-          (contactForm?.get('first_name')?.dirty ||
-            contactForm?.get('first_name')?.touched)
+          contactForm?.get('email')?.invalid &&
+          (contactForm?.get('email')?.dirty ||
+            contactForm?.get('email')?.touched)
         "
         class="text-pinkk"
         >Please provide a valid email.</small
@@ -145,9 +145,9 @@
       ></textarea>
       <small
         *ngIf="
-          contactForm?.get('first_name')?.invalid &&
-          (contactForm?.get('first_name')?.dirty ||
-            contactForm?.get('first_name')?.touched)
+          contactForm?.get('message')?.invalid &&
+          (contactForm?.get('message')?.dirty ||
+            contactForm?.get('message')?.touched)
         "
         class="text-pinkk"
         >Please Enter your message</small
@@ -178,7 +178,7 @@
   >
     <a
       href="#"
-      class="bg-mainBg text-white text-center text-xl font-bold px-[12.5px] py-[5px] mx-auto rounded-full"
+      class="z-40 bg-mainBg text-white text-center text-xl font-bold px-[12.5px] py-[5px] mx-auto rounded-full"
       ><i class="fa fa-angle-left px-[1px]"></i
     ></a>
   </div>
